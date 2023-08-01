@@ -5,7 +5,7 @@ and `as->`) in Common Lisp.
 
 ## Why?
 
-It is way for me to learn and have fun writing CL code
+It is a way for me to learn and have fun writing CL code
 
 ## Loading
 
