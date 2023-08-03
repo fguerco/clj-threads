@@ -1,22 +1,20 @@
-(asdf:defsystem #:clj-threads
+(defsystem :clj-threads
   :name "Port of Clojure thread macros to Common Lisp"
   :version "1.0.0"
   :author "Felipe Guerço Oliveira <felipeguerco@gmail.com>"
-  :depends-on (#:clj-threads/src
-               #:clj-threads/test)
-  :in-order-to ((test-op (test-op #:clj-threads/test))))
-
-(asdf:defsystem #:clj-threads/src
+  :license "MIT"
   :components ((:module "src"
                 :serial t
                 :components ((:file "package")
-                             (:file "clojure-threads")))))
+                             (:file "clojure-threads"))))
 
-(asdf:defsystem #:clj-threads/test
-  :depends-on (#:clj-threads/src #:fiveam)
+  :in-order-to ((test-op (test-op :clj-threads/test))))
+
+(defsystem :clj-threads/test
+  :depends-on (:clj-threads :parachute)
   :components ((:module "test"
                 :serial t
                 :components ((:file "package")
                              (:file "clojure-threads-test"))))
   :perform (test-op (op c)
-                    (funcall (read-from-string "5am:run-all-tests"))))
+                    (symbol-call :parachute :test :clj-threads-test)))

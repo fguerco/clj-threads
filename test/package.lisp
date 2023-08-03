@@ -1,5 +1,5 @@
-(defpackage #:clj-threads-test
-  (:use #:cl #:clj-threads #:fiveam))
+(defpackage :clj-threads-test
+  (:use :cl :clj-threads :parachute))
 
 
 

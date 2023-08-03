@@ -1,4 +1,4 @@
-(defpackage #:clj-threads
+(defpackage :clj-threads
   (:use #:cl)
   (:export #:->
            #:->>

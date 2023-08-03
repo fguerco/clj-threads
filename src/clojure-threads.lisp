@@ -1,4 +1,4 @@
-(in-package #:clj-threads)
+(in-package :clj-threads)
 
 (defmacro -> (value &body forms)
   (reduce (lambda (prev it) `(,(car it) ,prev ,@(cdr it)))
